@@ -1,0 +1,119 @@
+{
+    "dashboardId": "healthcare_data_lake_dashboard",
+    "name": "Healthcare Data Lake Dashboard",
+    "version": 1,
+    "permissions": [],
+    "publishedVersion": 1,
+    "createdTime": "2024-05-27T12:00:00Z",
+    "lastPublishedTime": "2024-05-27T12:00:00Z",
+    "sheets": [
+      {
+        "sheetId": "patients_sheet",
+        "name": "Patients Overview",
+        "columns": 2,
+        "rows": 2,
+        "tileLayout": {
+          "tiles": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "height": 1,
+              "visualizationProperties": {
+                "type": "horizontal",
+                "dataSourceArn": "arn:aws:quicksight:us-east-1:123456789012:dataset/patients_dataset",
+                "xAxisColumn": {
+                  "type": "field",
+                  "name": "age"
+                },
+                "yAxisColumn": {
+                  "type": "field",
+                  "name": "diagnosis"
+                }
+              }
+            },
+            {
+              "x": 1,
+              "y": 0,
+              "width": 1,
+              "height": 1,
+              "visualizationProperties": {
+                "type": "line",
+                "dataSourceArn": "arn:aws:quicksight:us-east-1:123456789012:dataset/patients_dataset",
+                "xAxisColumn": {
+                  "type": "field",
+                  "name": "date_of_admission"
+                },
+                "yAxisColumn": {
+                  "type": "field",
+                  "name": "patient_count"
+                }
+              }
+            },
+            {
+              "x": 0,
+              "y": 1,
+              "width": 2,
+              "height": 1,
+              "visualizationProperties": {
+                "type": "table",
+                "dataSourceArn": "arn:aws:quicksight:us-east-1:123456789012:dataset/patients_dataset",
+                "inputColumns": [
+                  {
+                    "type": "field",
+                    "name": "patient_id"
+                  },
+                  {
+                    "type": "field",
+                    "name": "name"
+                  },
+                  {
+                    "type": "field",
+                    "name": "gender"
+                  },
+                  {
+                    "type": "field",
+                    "name": "date_of_birth"
+                  },
+                  {
+                    "type": "field",
+                    "name": "diagnosis"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "sheetId": "appointments_sheet",
+        "name": "Appointments Analysis",
+        "columns": 1,
+        "rows": 1,
+        "tileLayout": {
+          "tiles": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "height": 1,
+              "visualizationProperties": {
+                "type": "pie",
+                "dataSourceArn": "arn:aws:quicksight:us-east-1:123456789012:dataset/appointments_dataset",
+                "legendPosition": "right",
+                "groupColumn": {
+                  "type": "field",
+                  "name": "appointment_type"
+                },
+                "measureColumn": {
+                  "type": "field",
+                  "name": "appointment_count"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+  
